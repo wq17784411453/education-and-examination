@@ -4,12 +4,12 @@
 
 - 管理员登录界面
 
-![image](https://github.com/wq17784411453/education-and-examination/img/2.png)
+![image](https://github.com/wq17784411453/education-and-examination/blob/master/img/2.png)
 
 - 教师登录界面
 
-![image](https://github.com/wq17784411453/education-and-examination/img/1.png)
+![image](https://github.com/wq17784411453/education-and-examination/blob/master/img/1.png)
 
 - 学生登录界面
 
-![image](https://github.com/wq17784411453/education-and-examination/img/3.png)
+![image](https://github.com/wq17784411453/education-and-examination/blob/master/img/3.png)
