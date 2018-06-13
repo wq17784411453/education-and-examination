@@ -129,7 +129,7 @@ public class QuestionManageAction extends ActionSupport{
 		
 		}
 		try {
-			ServletActionContext.getResponse().getWriter().print(success);//向浏览器响应是否成功的状态码
+			ServletActionContext.getResponse().getWriter().print(success);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e.getMessage());
@@ -155,7 +155,7 @@ public class QuestionManageAction extends ActionSupport{
 		
 		}
 		try {
-			ServletActionContext.getResponse().getWriter().print(success);//向浏览器响应是否成功的状态码
+			ServletActionContext.getResponse().getWriter().print(success);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e.getMessage());
@@ -174,7 +174,7 @@ public class QuestionManageAction extends ActionSupport{
 		JsonConfig jsonConfig = new JsonConfig();
 		jsonConfig.setJsonPropertyFilter(new PropertyFilter() {
 		    public boolean apply(Object obj, String name, Object value) {
-			if(obj instanceof Set||name.equals("subjects") || name.equals("choices") || name.equals("judges")){//过滤掉集�?
+			if(obj instanceof Set||name.equals("subjects") || name.equals("choices") || name.equals("judges")){
 				return true;
 			}else{
 				return false;
@@ -202,7 +202,7 @@ public class QuestionManageAction extends ActionSupport{
 		JsonConfig jsonConfig = new JsonConfig();
 		jsonConfig.setJsonPropertyFilter(new PropertyFilter() {
 		    public boolean apply(Object obj, String name, Object value) {
-			if(obj instanceof Set||name.equals("subjects") || name.equals("choices") || name.equals("judges")){//过滤掉集�?
+			if(obj instanceof Set||name.equals("subjects") || name.equals("choices") || name.equals("judges")){
 				return true;
 			}else{
 				return false;
@@ -241,7 +241,7 @@ public class QuestionManageAction extends ActionSupport{
 		
 		}
 		try {
-			ServletActionContext.getResponse().getWriter().print(success);//向浏览器响应是否成功的状态码
+			ServletActionContext.getResponse().getWriter().print(success);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e.getMessage());
@@ -265,7 +265,7 @@ public class QuestionManageAction extends ActionSupport{
 		
 		}
 		try {
-			ServletActionContext.getResponse().getWriter().print(success);//向浏览器响应是否成功的状态码
+			ServletActionContext.getResponse().getWriter().print(success);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e.getMessage());
@@ -281,7 +281,7 @@ public class QuestionManageAction extends ActionSupport{
 		int success = 0;
 		if(deleteChoice){
 			success = 1;
-			//由于是转发并且js页面刷新,�?以无�?重查
+			
 		}
 		try {
 			ServletActionContext.getResponse().getWriter().print(success);
@@ -301,7 +301,7 @@ public class QuestionManageAction extends ActionSupport{
 		int success = 0;
 		if(deleteJudge){
 			success = 1;
-			//由于是转发并且js页面刷新,�?以无�?重查
+			
 		}
 		try {
 			ServletActionContext.getResponse().getWriter().print(success);
