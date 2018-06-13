@@ -41,12 +41,9 @@ public class AdminLoginAction extends ActionSupport {
 
 
 
-	/**
-	 * Ajax异步请求获得登录许可
-	 * @return 返回登录状�??
-	 */
+	
 	public String login(){
-		//管理�?
+		
 		Admin admin = new  Admin();
 		admin.setUsername(username);
 		//admin.setPassword(Md5Utils.md5(password));
@@ -54,13 +51,13 @@ public class AdminLoginAction extends ActionSupport {
 		Admin newAdmin = adminService.getAdminByUserName(admin);
 		int login = 1;
 		if(newAdmin==null){
-			//用户名不存在
+			
 			login = -1;
 		}else if(!newAdmin.getPassword().equals(admin.getPassword())){
-			//密码不正�?
+			
 			login = -2;
 		}else{
-			//存储入session
+			
 			ServletActionContext.getContext().getSession().put("admin", newAdmin);
 		}
 		 HttpServletResponse response = ServletActionContext.getResponse();
@@ -73,9 +70,7 @@ public class AdminLoginAction extends ActionSupport {
 	}
 	
 	
-	/**
-	 * �?出登�?
-	 */
+	
 	public String logout(){
 		ServletActionContext.getContext().getSession().remove("admin");
 		return "logout";
