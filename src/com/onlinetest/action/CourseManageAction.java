@@ -53,28 +53,28 @@ public class CourseManageAction extends ActionSupport{
 
 
 	/**
-	 * 根据页码找到对应的课�?
+	 * æ ¹æ®é¡µç æ‰¾åˆ°å¯¹åº”çš„è¯¾ç¨?
 	 * @return
 	 */
 	public String findCourseByPage(){
-		//获取页面传�?�过来的当前页码�?
+		
 		if(pageCode==0){
 			pageCode = 1;
 		}
-		//给pageSize,每页的记录数赋�??
+		
 		int pageSize = 5;
 		
 		PageBean<Course> pb = courseService.findCourseByPage(pageCode,pageSize);
 		if(pb!=null){
 			pb.setUrl("findCourseByPage.action?");
 		}
-		//存入request域中
+		
 		ServletActionContext.getRequest().setAttribute("pb", pb);
 		return  "success";
 	}
 	
 	/**
-	 * 添加课程
+	 * æ·»åŠ è¯¾ç¨‹
 	 * @return
 	 */
 	public String addCourse(){
@@ -94,7 +94,7 @@ public class CourseManageAction extends ActionSupport{
 			}
 		}
 		try {
-			ServletActionContext.getResponse().getWriter().print(success);//向浏览器响应是否成功的状态码
+			ServletActionContext.getResponse().getWriter().print(success);//å‘æµè§ˆå™¨å“åº”æ˜¯å¦æˆåŠŸçš„çŠ¶æ€ç 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			throw new RuntimeException(e.getMessage());
@@ -104,9 +104,9 @@ public class CourseManageAction extends ActionSupport{
 	
 	
 	/**
-	 * 得到指定的课�?
-	 * Ajax请求该方�?
-	 * 向浏览器返回该课程的json对象
+	 * å¾—åˆ°æŒ‡å®šçš„è¯¾ç¨?
+	 * Ajaxè¯·æ±‚è¯¥æ–¹æ³?
+	 * å‘æµè§ˆå™¨è¿”å›žè¯¥è¯¾ç¨‹çš„jsonå¯¹è±¡
 	 * @return
 	 */
 	public String getCourse(){
@@ -126,19 +126,19 @@ public class CourseManageAction extends ActionSupport{
 	
 	
 	/**
-	 * 修改指定课程
+	 * ä¿®æ”¹æŒ‡å®šè¯¾ç¨‹
 	 * @return
 	 */
 	public String updateCourse(){
 		Course course = new Course();
 		course.setCourseId(courseId);
-		Course updateCourse = courseService.getCourseById(course);//查出�?要修改的课程对象
+		Course updateCourse = courseService.getCourseById(course);
 		updateCourse.setCourseName(courseName);
 		int success = 0;
-		Course newCourse = courseService.updateCourse(updateCourse);//修改该课程对�?
+		Course newCourse = courseService.updateCourse(updateCourse);
 		if(newCourse!=null){
 			success = 1;
-			//由于是转发并且js页面刷新,�?以无�?重查
+			
 		}
 		try {
 			ServletActionContext.getResponse().getWriter().print(success);
@@ -150,7 +150,7 @@ public class CourseManageAction extends ActionSupport{
 	}
 	
 	/**
-	 * 删除课程
+	 * åˆ é™¤è¯¾ç¨‹
 	 * @return
 	 */
 	public String deleteCourse(){
@@ -160,7 +160,7 @@ public class CourseManageAction extends ActionSupport{
 		int success = 0;
 		if(deleteCourse){
 			success = 1;
-			//由于是转发并且js页面刷新,�?以无�?重查
+			
 		}
 		try {
 			ServletActionContext.getResponse().getWriter().print(success);
@@ -174,11 +174,11 @@ public class CourseManageAction extends ActionSupport{
 	
 	
 	public String queryCourse(){
-		//获取页面传�?�过来的当前页码�?
+		
 		if(pageCode==0){
 			pageCode = 1;
 		}
-		//给pageSize,每页的记录数赋�??
+		
 		int pageSize = 5;
 		PageBean<Course> pb = null;
 		if("".equals(courseName.trim())){
@@ -206,7 +206,7 @@ public class CourseManageAction extends ActionSupport{
 		JsonConfig jsonConfig = new JsonConfig();
 		jsonConfig.setJsonPropertyFilter(new PropertyFilter() {
 		    public boolean apply(Object obj, String name, Object value) {
-			if(obj instanceof Set||name.equals("subjects")){//过滤掉集�?
+			if(obj instanceof Set||name.equals("subjects")){//è¿‡æ»¤æŽ‰é›†å?
 				return true;
 			}else{
 				return false;
