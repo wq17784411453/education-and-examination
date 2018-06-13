@@ -56,23 +56,20 @@ public class AdminInfoAction extends ActionSupport{
 
 
 	
-	/**
-	 * 管理员密码修�?
-	 * @return
-	 */
+	
 	public String adminPwd(){
 		Admin admin = (Admin) ServletActionContext.getContext().getSession().get("admin");
-		int state = -1;//原密码错�?
-		//取出原密码进行比�?
+		int state = -1;
+		
 		if(admin.getPassword().equals(Md5Utils.md5(oldPwd))){
 			if(newPwd.equals(confirmPwd)){
-				state = 1;//修改成功
+				state = 1;
 				admin.setPassword(Md5Utils.md5(newPwd));
 				admin = adminService.updateAdminInfo(admin);
-				//重新存入session
+				
 				ServletActionContext.getContext().getSession().put("admin", admin);
 			}else{
-				state = 0;//确认密码不一�?
+				state = 0;
 			}
 		}
 		try {
