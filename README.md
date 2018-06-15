@@ -3,7 +3,7 @@
 
 [演示链接](http://www.xidabadminton.top:8080/OnlineTest_6/index.jsp)
 
-### 测试账号：管理员账号：yx   密码
+### 测试账号：管理员账号：yx   密码：123456
 
 ### 功能分析
 
